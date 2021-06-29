@@ -1,4 +1,5 @@
 import 'package:books_eshop/model/book_model.dart';
+import 'package:books_eshop/screens/bookScreen.dart';
 import 'package:flutter/material.dart';
 
 final List<BookModel> books = BookModel.books;
@@ -17,7 +18,7 @@ class BookList extends StatelessWidget {
             padding:
                 const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   "Best Sell",
@@ -51,7 +52,14 @@ class BookList extends StatelessWidget {
                   padding: EdgeInsets.only(
                       bottom: 16.0, right: 8.0, left: index == 0 ? 8.0 : 0),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => BookScreen(
+                                    book: books[index],
+                                  )));
+                    },
                     child: Column(
                       children: [
                         Card(

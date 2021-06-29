@@ -5,16 +5,22 @@ AppBar buildAppBar() => AppBar(
       elevation: 0,
       centerTitle: false,
       title: Text(
-        'BookShop',
+        'Book Shop',
         style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 30,
-            color: Colors.blueAccent),
+            color: Colors.yellow[800]),
       ),
       actions: [
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: CircleAvatar(),
+          child: CircleAvatar(
+            backgroundColor: Colors.white,
+            child: Icon(
+              Icons.person,
+              color: Colors.grey,
+            ),
+          ),
         )
       ],
     );

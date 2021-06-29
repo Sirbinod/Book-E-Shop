@@ -1,4 +1,5 @@
 import 'package:books_eshop/model/book_model.dart';
+import 'package:books_eshop/screens/bookScreen.dart';
 import 'package:flutter/material.dart';
 
 class NewBook extends StatelessWidget {
@@ -25,7 +26,14 @@ class NewBook extends StatelessWidget {
           ),
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => BookScreen(book: newBook),
+              ),
+            );
+          },
           child: Column(
             children: [
               Padding(
@@ -77,6 +85,9 @@ class NewBook extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(
+          height: MediaQuery.of(context).padding.bottom,
+        )
       ],
     );
   }

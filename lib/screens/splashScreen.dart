@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     Future.delayed(Duration(seconds: 4), () {
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => HomeScreen()),
       );
@@ -35,15 +35,17 @@ class _SplashScreenState extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Icon(
-              Icons.book,
-              size: 90,
+              Icons.menu_book,
+              size: 180,
+              color: Colors.blueGrey,
             ),
             SizedBox(
               height: 20,
             ),
             Text(
               "Books E-Shop",
-              style: kPrimaryTitle.copyWith(letterSpacing: 1, fontSize: 30),
+              style: kPrimaryTitle.copyWith(
+                  letterSpacing: 1, fontSize: 30, color: Colors.blue[400]),
             )
           ],
         ),
